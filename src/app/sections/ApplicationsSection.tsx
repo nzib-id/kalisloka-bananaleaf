@@ -38,6 +38,7 @@ export default function ApplicationsSection() {
         <p className="text-[15px] md:text-[16px] text-[#003F38] mb-14">
           Fresh ginger from Kalisloka is intended for commercial use, including:
         </p>
+        
         {/* LIST */}
         <div className="flex flex-col gap-10 md:gap-[52px] mt-10 container">
 
