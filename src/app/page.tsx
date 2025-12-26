@@ -21,7 +21,7 @@ const HomePage: React.FC = () => {
       <GradesSizingSection />
       <GallerySection />
       {/* <ApplicationsSection /> */}
-    
+
       <ContactSection />
     </Layout>
   );

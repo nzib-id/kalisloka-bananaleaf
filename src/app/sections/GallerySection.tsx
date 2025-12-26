@@ -8,7 +8,7 @@ import photos from "@/data/gallery";
 
 export default function GallerySection() {
   return (
-    <section className="bg-[#E6FFCF] py-24">
+    <section id="gallery" className="bg-[#E6FFCF] py-24">
       {/* HEADER */}
       <div className="text-center mb-16 px-4">
         <h2 className="font-heading font-semibold text-[#003F38]

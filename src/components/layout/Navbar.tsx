@@ -1,6 +1,22 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
+
+type NavItem = {
+  label: string;
+  href: string;
+  cta?: boolean;
+};
+
+const NAV_ITEMS: NavItem[] = [
+  { label: "Overview", href: "#overview" },
+  { label: "Specification", href: "#specifications" },
+  { label: "Grades", href: "#grades" },
+  { label: "Gallery", href: "#gallery" },
+  { label: "Send Inquiry", href: "#contact", cta: true },
+];
+
 
 const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -17,7 +33,7 @@ const Navbar: React.FC = () => {
 
     const handleScroll = () => {
       const hero = document.getElementById("hero");
-      const product = document.getElementById("product-overview");
+      const product = document.getElementById("overview");
       const contact = document.getElementById("contact");
 
       if (!hero || !product || !contact) return;
@@ -83,9 +99,29 @@ const Navbar: React.FC = () => {
                   ${green ? "text-[#004035]" : "text-white"}
                 `}
               >
-                <a href="#hero" className="hover:opacity-70 transition">Home</a>
-                <a href="#product-overview" className="hover:opacity-70 transition">Product</a>
-                <a href="#contact" className="hover:opacity-70 transition">Contact</a>
+                {NAV_ITEMS.map((item) =>
+                  item.cta ? (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className={`${
+                        green
+                          ? "bg-[#004035] text-[#E6FFCF]"
+                          : "bg-[#E6FFCF] text-[#004035]"
+                      } rounded-full text-sm font-semibold px-3 lg:px-5 py-2 hover:opacity-90 transition-all`}
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <Link
+                      key={item.label}
+                      href={item.href}
+                      className="hover:opacity-70 transition"
+                    >
+                      {item.label}
+                    </Link>
+                  )
+                )}
               </div>
 
               {/* MOBILE BURGER ICON */}

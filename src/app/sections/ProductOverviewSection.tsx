@@ -25,7 +25,7 @@ export default function ProductOverviewSection() {
   const transitionSettings = { duration: 0.8, ease: cubicBezier(0.16, 1, 0.3, 1), };
 
   return (
-    <section id="product-overview" className="relative w-full overflow-hidden">
+    <section id="overview" className="relative w-full">
 
       {/* Background (Tetap Sama) */}
       <div className="absolute inset-0 -mt-8 md:-mt-12 bg-[#E6FFCF] rounded-t-[45px] md:rounded-t-[60px]" />
@@ -171,7 +171,7 @@ export default function ProductOverviewSection() {
         </div>
 
         {/* Description Text */}
-        <div className="container mx-auto mt-12 px-4 text-left space-y-4">
+        <div className="container mx-auto mt-12 md:mt-16 px-4 text-left space-y-4">
           <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#003F38] max-w-[630px] mx-auto">
             Fresh banana leaves supplied in export-ready condition, selected for wide surface area and clean handling.
             Intended for food wrapping, catering, and wholesale distribution.

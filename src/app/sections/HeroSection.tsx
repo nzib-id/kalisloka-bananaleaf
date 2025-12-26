@@ -10,7 +10,7 @@ export default function HeroSection() {
       className="
         relative
         w-full
-        min-h-[110vh] sm:min-h-[110vh] md:min-h-[120vh] lg:min-h-[135vh]
+        min-h-[110vh] sm:min-h-[110vh] md:min-h-[120vh] lg:min-h-[125vh]
         flex
         items-center
         overflow-hidden
@@ -34,15 +34,13 @@ export default function HeroSection() {
       />
 
       {/* OVERLAY agar teks lebih jelas (mirip screenshot) */}
-      <div className="absolute inset-0 bg-black/20 md:bg-black/5"></div>
+      {/* <div className="absolute inset-0 bg-black/20 md:bg-black/5"></div> */}
+      <div className="absolute inset-0 bg-black/20 md:bg-black/20"></div>
 
       {/* CONTENT */}
       <div className="relative z-10 container mx-auto ">
         <div className="max-w-[650px]
-          text-left
-          pt-0
-          lg:-mt-10
-          xl:-mt-16">
+          text-left h-screen flex flex-col justify-center pb-[180px] lg:pb-[110px]">
 
           {/* HEADLINE */}
           <h1

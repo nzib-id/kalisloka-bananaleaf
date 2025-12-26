@@ -22,11 +22,15 @@ const ContactSection: React.FC = () => {
         className="
           text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px]
           font-heading font-semibold tracking-tight
-          mb-10
+          mb-5
         "
       >
-        Contact Us
+        Start a conversation
       </h2>
+
+      <p className="mt-3 sm:mt-4 text-[13px] sm:text-[14px] text-[#E6FFCF] mb-10">
+          Defined grading to support consistent supply and commercial use.
+        </p>
 
       {/* CTA BUTTONS */}
       <div className="flex flex-col sm:flex-row justify-center items-center gap-6 mb-12">
@@ -52,7 +56,7 @@ const ContactSection: React.FC = () => {
 
         {/* WhatsApp Button */}
         <Link
-          href="https://wa.me/6281234567890"
+          href="https://wa.me/6285121383435"
           className="
             flex items-center gap-3
             border border-[#E8FAD9]

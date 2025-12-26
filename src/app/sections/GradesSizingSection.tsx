@@ -32,14 +32,14 @@ const grades = [
 
 export default function GradesSection() {
   return (
-    <section className="bg-[#E6FFCF] py-20 sm:py-24 lg:py-28">
+    <section id="grades" className="bg-[#E6FFCF] py-20 sm:py-24 lg:py-28">
       {/* HEADER */}
       <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16 lg:mb-20 px-4 sm:px-6">
         <h2 className="font-heading font-semibold text-[#003F38]
           text-[44px] sm:text-[56px] lg:text-[80px]">
           Grades
         </h2>
-        <p className="mt-3 sm:mt-4 text-[13px] sm:text-[14px] text-[#003F38]/70">
+        <p className="mt-3 sm:mt-4 text-[13px] sm:text-[14px] text-[#1E1E1E]/70">
           Defined grading to support consistent supply and commercial use.
         </p>
       </div>
