@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { MasonryPhotoAlbum } from "react-photo-album";
 import "react-photo-album/masonry.css";
 

@@ -1,8 +1,5 @@
 import type { Photo } from "react-photo-album";
 
-/**
- * File HARUS unik
- */
 const files = [
   "banana-1.png",
   "banana-2.png",
@@ -10,24 +7,15 @@ const files = [
   "banana-4.png",
   "banana-5.jpg",
   "banana-6.jpg",
-  
 ];
 
-/**
- * Rasio SOFT & NATURAL
- * Aman untuk 4 kolom
- */
 const RATIOS: [number, number][] = [
-  [4, 3], // landscape
-  [3, 4], // portrait
-  [1, 1], // square
-  [5, 4], // soft landscape
+  [4, 3],
+  [3, 4],
+  [1, 1],
+  [5, 4],
 ];
 
-/**
- * Deterministic mapping
- * TANPA random
- */
 const photos: Photo[] = files.map((file, index) => {
   const [w, h] = RATIOS[index % RATIOS.length];
 
@@ -36,6 +24,8 @@ const photos: Photo[] = files.map((file, index) => {
     width: w,
     height: h,
     alt: file.replace(/\.(png|jpe?g|webp)$/i, ""),
+    loading: "lazy",
+    decoding: "async",
   };
 });
 
