@@ -8,97 +8,79 @@ export default function HeroSection() {
     <section
       id="hero"
       className="
-        relative w-full
-        min-h-[110vh] sm:min-h-[110vh] lg:min-h-[115vh]
-        flex items-center
+        relative
+        w-full
+        min-h-[110vh] sm:min-h-[110vh] md:min-h-[120vh] lg:min-h-[135vh]
+        flex
+        items-center
         overflow-hidden
       "
     >
-      {/* BACKGROUND IMAGE */}
+      {/* HERO IMAGE — absolute full width */}
       <img
-        src="/images/hero-ginger.png"
-        alt="Fresh Ginger Background"
+        src="/images/hero-banana.png"
+        alt="Hero Background"
         className="
-          absolute inset-0 w-full h-full
+          absolute inset-0
+          w-full h-full
           object-cover
-          object-[center_30%]
-          md:object-[center_40%]
+          object-[center_10%]
 
+          sm:object-[center_5%]
+
+          md:object-[center_10%]
+          lg:object-[center_15%]
         "
       />
 
-      {/* DARK OVERLAY */}
-      <div className="absolute inset-0 bg-black/40 md:bg-black/45"></div>
+      {/* OVERLAY agar teks lebih jelas (mirip screenshot) */}
+      <div className="absolute inset-0 bg-black/20 md:bg-black/5"></div>
 
       {/* CONTENT */}
-      <div className="relative z-10 container mx-auto">
-        <div
-          className="
-            max-w-[750px]
-            text-left
-            lg:mt-10
-          "
-        >
+      <div className="relative z-10 container mx-auto ">
+        <div className="max-w-[650px]
+          text-left
+          pt-0
+          lg:-mt-10
+          xl:-mt-16">
+
           {/* HEADLINE */}
           <h1
             className="
               text-white
+              text-[32px] sm:text-[40px] md:text-[52px] lg:text-[64px]
               font-heading
-              text-[32px] sm:text-[42px] md:text-[54px] lg:text-[62px]
-              font-bold
               leading-tight
-              tracking-tight
               mb-6
             "
           >
-            Fresh Ginger– Commercial <br />
-            Raw Material Supply
+            Fresh banana leaves. Ready for export.
           </h1>
 
-          {/* DESCRIPTION */}
+          {/* SUBHEADLINE */}
           <p
             className="
-              text-white text-[14px] sm:text-[15px] md:text-[16px]
+              text-[14px] sm:text-[15px] md:text-[16px]
+              text-white
               leading-relaxed
-              max-w-[720px]
               mb-10
+              max-w-[520px]
             "
           >
-            <span className="font-semibold">Kalisloka</span> supplies fresh ginger as agricultural raw material for food, beverage, herbal, and wellness production.
-            <br />
-            We focus on clear specifications, consistent handling, and practical cooperation for
-            commercial buyers.
+            <b>Kalisloka</b> supplying fresh banana leaves with a focus on size consistency, clean handling, and dependable export supply.
           </p>
 
           {/* CTA BUTTONS */}
           <div className="flex flex-wrap items-center gap-4 sm:gap-6">
-            {/* Primary CTA */}
-            <Button
-              variant="white"
-              className="
-                px-6 py-3 text-sm font-semibold
-                rounded-full
-                shadow-md
-                hover:opacity-90 transition
-              "
-            >
-              Request Specifications & Pricing
+            <Button variant="primary" className="px-6 py-3 text-sm">
+              View Specification
             </Button>
 
-            {/* Outline CTA */}
-            <Button
-              variant="outline-light"
-              className="
-                px-6 py-3 text-sm font-semibold
-                rounded-full
-                border border-white
-                text-white
-                hover:bg-white/10 transition
-              "
-            >
+            <Button variant="outline-light" className="px-6 py-3 text-sm">
               Ask About Trial Shipment
             </Button>
           </div>
+
         </div>
       </div>
     </section>

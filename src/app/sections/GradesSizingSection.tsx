@@ -1,134 +1,173 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 
 const grades = [
   {
-    title: "Grade A",
-    image: "/images/ginger.svg",
-    list: [
-      "Larger roots",
-      "Cleaner appearance",
-      "Minimal visible defects",
-      "Suitable where appearance and size are relevant",
+    title: "Standard Supply",
+    subtitle: "Predominantly Grade A",
+    points: [
+      "Clean, wide, usable leaves",
+      "Minor visual imperfections allowed",
+      "Best for: Restaurants, catering, distributors",
     ],
   },
   {
-    title: "Grade B",
-    image: "/images/ginger.svg",
-    list: [
-      "Medium size roots",
-      "Natural surface marks allowed",
-      "Good for processing where appearance is less critical",
+    title: "Uniform Supply",
+    subtitle: "Grade A only",
+    points: [
+      "More consistent size and appearance",
+      "Strict visual selection",
+      "Best for: Premium catering, presentation-focused wrapping",
+    ],
+  },
+  {
+    title: "Functional Supply",
+    subtitle: "Grade B",
+    points: [
+      "Visual imperfections allowed",
+      "Fully usable for wrapping",
+      "Best for: Processing, bulk operations, cost-focused use",
     ],
   },
 ];
 
-export default function GradesSizingSection() {
+export default function GradesSection() {
   return (
-    <section
-      id="grades"
-      className="w-full container mx-auto bg-[#E6FFCF] pt-40 md:pt-24 pb-20 md:pb-28"
-    >
-      {/* TITLE */}
-      <div className="container mx-auto px-6 md:px-10 text-center max-w-4xl">
-        <h2 className="text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px] font-heading font-semibold text-[#004035] mb-4 tracking-tight">
-          Grades & Sizing
+    <section className="bg-[#E6FFCF] py-20 sm:py-24 lg:py-28">
+      {/* HEADER */}
+      <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16 lg:mb-20 px-4 sm:px-6">
+        <h2 className="font-heading font-semibold text-[#003F38]
+          text-[44px] sm:text-[56px] lg:text-[80px]">
+          Grades
         </h2>
-        <p className=" text-[15px] md:text-[16px] mb-12">
-          We provide grading to support consistent processing and trading.
+        <p className="mt-3 sm:mt-4 text-[13px] sm:text-[14px] text-[#003F38]/70">
+          Defined grading to support consistent supply and commercial use.
         </p>
       </div>
 
-      {/* GRID PRODUCT */}
-      <div className="container mx-auto px-6 md:px-10">
-        <div className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-          gap-10
-          place-items-start
-          items-stretch
-          max-w-[850px]
-          mx-auto
-                  ">
-          {grades.map((item, idx) => (
-            <div
-              key={idx}
-              className="
-                group
-                w-full
-                max-w-[460px]
-                rounded-3xl
-                border-[4px] border-[#004035]
+      {/* GRADES GRID */}
+      <div
+        className="
+          max-w-5xl mx-auto px-4 sm:px-6
+          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+          gap-8 lg:gap-10
+          place-items-center
+        "
+      >
+        {grades.map((grade, i) => (
+          <div
+            key={i}
+            className="
+              w-full max-w-[320px] sm:max-w-[300px]
+              min-h-[440px] sm:min-h-[460px] lg:min-h-[480px]
+              border-[4px] border-[#003F38]
+              rounded-3xl
+              px-6
+              py-8 sm:py-10
+              flex flex-col
+              text-center
+            "
+          >
+            {/* TITLE */}
+            <h3 className="font-heading font-semibold text-[#003F38]
+              text-[42px]  lg:text-[48px] leading-tight mb-6 md:mb-8">
+              {grade.title}
+            </h3>
 
-                px-6 py-10
-                transition-all duration-300 ease-in-out
+            {/* CONTENT (subtitle + points with dividers) */}
+            <div className="flex flex-col text-center text-[#003F38]">
+              {[grade.subtitle, ...grade.points].map((text, idx) => (
+                <div key={idx} className="flex flex-col items-center">
+                  <p
+                    className={`
+                      leading-relaxed font-semibold
+                      ${idx === 0
+                        ? "text-[11px] sm:text-[12px] text-[#003F38] py-4"
+                        : "text-[12px] sm:text-[13px] py-3"}
+                    `}
+                  >
+                    {text}
+                  </p>
 
-                hover:bg-[#004035]
-                hover:text-[#E6FFCF]
-                hover:border-[#004035]
-                hover:shadow-xl
-              "
-            >
-              <div className="flex flex-col items-center">
-
-                {/* IMAGE WRAPPER */}
-                <div
-                  className="
-                    rounded-3xl
-                    shadow-md overflow-hidden mb-6
-                    border-[3px] border-[#004035]
-                    transition-all duration-300
-
-                    group-hover:border-[#E6FFCF]
-                  "
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="
-                      w-32 md:w-44 h-32 md:h-44 object-cover
-                      transition-all duration-300
-                      group-hover:brightness-110
-                    "
-                  />
+                  {/* divider SELALU ADA */}
+                  <div className="h-px bg-[#003F38]/20 w-full" />
                 </div>
-
-                {/* TITLE */}
-                <h3
-                  className="
-                    text-xl md:text-2xl font-heading font-bold text-[#004035]
-                    text-center mb-8
-                    transition-all duration-300
-
-                    group-hover:text-[#E6FFCF]
-                  "
-                >
-                  {item.title}
-                </h3>
-
-
-                {/* LIST */}
-              <ul className="text-[14px] md:text-[15px] space-y-4 text-center">
-                {item.list.map((point, i) => (
-                  <div key={i}>
-                    <li>{point}</li>
-
-                    {/* Separator (jangan render setelah item terakhir) */}
-                    {i < item.list.length - 1 && (
-                      <div className="h-px bg-[#003F38]/20 w-3/4 mx-auto mt-4" />
-                    )}
-                  </div>
-                ))}
-              </ul>
-
-
-
-
-              </div>
+              ))}
             </div>
 
-          ))}
+
+            {/* CTA */}
+            <a
+              href="#"
+              className="
+                font-heading
+                mt-auto
+                pt-8 sm:pt-10
+                text-[12px] sm:text-[13px] md:text-[18px]
+                font-medium
+                text-[#003F38]
+              "
+            >
+              Request this supply
+            </a>
+          </div>
+        ))}
+      </div>
+
+      {/* CUSTOM SPEC */}
+      <div className="max-w-5xl mx-auto mt-16 sm:mt-20 px-4 sm:px-6">
+        <div className="
+          border-[4px] border-[#003F38]
+          rounded-3xl
+          px-6 sm:px-10
+          py-10 sm:py-12
+          text-center
+        ">
+          <h3 className="font-heading font-semibold text-[#003F38]
+            text-[42px] xl:text-[48px] mb-3 sm:mb-4">
+            Custom Specification
+          </h3>
+
+          <p className="text-[12px] sm:text-[13px] text-[#003F38]/70 mb-6 sm:mb-8">
+            For buyers with specific operational or market requirements.
+          </p>
+
+          <div className="flex justify-center">
+            <div
+              className="
+                grid grid-cols-1 sm:grid-cols-2
+                gap-y-3 sm:gap-y-4
+                gap-x-10
+                text-[12px] sm:text-[13px]
+                text-[#003F38]
+                mb-8 sm:mb-10
+                max-w-[520px]
+                w-full
+                text-left
+                font-semibold
+              "
+            >
+              <span>• Size range adjustments</span>
+              <span>• Destination-specific handling</span>
+              <span>• Packing format customization</span>
+              <span>• Volume-based specifications</span>
+            </div>
+          </div>
+
+
+          <div className="text-center">
+            <a
+              href="#"
+              className="
+              font-heading
+                text-[16px] md:text-[24px]
+                font-medium
+                text-[#003F38]
+              "
+            >
+              Request Specification
+            </a>
+          </div>
+
         </div>
       </div>
     </section>

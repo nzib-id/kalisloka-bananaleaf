@@ -11,7 +11,7 @@ const montserrat = Montserrat({
 
 /* ====== METADATA ====== */
 export const metadata: Metadata = {
-  title: "Kalisloka - Ginger",
+  title: "Kalisloka - Banana",
   description:
     "Official website of Kalisloka — Agricultural Raw Material Supply & Trade Partner.",
   icons: {

@@ -7,16 +7,21 @@ import ProductOverviewSection from "./sections/ProductOverviewSection";
 import GradesSizingSection from "./sections/GradesSizingSection";
 import ApplicationsSection from "./sections/ApplicationsSection";
 import ContactSection from "./sections/ContactSection";
+import GallerySection from "./sections/GallerySection";
+
 
 
 const HomePage: React.FC = () => {
+
   return (
     <Layout>
       <HeroSection />
       <ProductOverviewSection />
       <SpecificationsSection />
       <GradesSizingSection />
-      <ApplicationsSection />
+      <GallerySection />
+      {/* <ApplicationsSection /> */}
+      
       <ContactSection />
     </Layout>
   );

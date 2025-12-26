@@ -28,14 +28,14 @@ export default function SpecificationsSection() {
           <div
             className="
               grid grid-cols-1 md:grid-cols-2
-              gap-10 md:gap-16 items-center
+              gap-10 md:gap-12 items-center
             "
           >
             {/* TEXT BLOCK */}
             <div className="space-y-4 text-[#003F38] text-[15px] leading-relaxed">
 
               <p>
-                <span className="font-semibold">Product Name:</span> Fresh Ginger
+                <span className="font-semibold">Product Name:</span> Fresh banana leaf
               </p>
 
               <p>
@@ -44,28 +44,30 @@ export default function SpecificationsSection() {
               </p>
 
               <p>
-                <span className="font-semibold">Form:</span> Whole roots, fresh, cleaned
+                <span className="font-semibold">Minimum width:</span> ≥30 cm
               </p>
 
               <p>
-                <span className="font-semibold">Color (Flesh):</span> Yellow
+                <span className="font-semibold">Length:</span> Natural length or cut size (on request)
               </p>
 
               <p>
-                <span className="font-semibold">Aroma:</span> Strong, spicy, suitable for
-                processing and extraction
+                <span className="font-semibold">Condition:</span> Fresh, cleaned
               </p>
 
               <p>
-                <span className="font-semibold">Origin:</span> Sourced from agricultural
-                areas in West Java (traceable by batch)
+                <span className="font-semibold">Color:</span> Natural green
+              </p>
+
+              <p>
+                <span className="font-semibold">Origin:</span> Sourced from agricultural areas in West Java (traceable by batch)
               </p>
             </div>
 
             {/* IMAGE */}
             <div className="flex justify-center md:justify-end">
               <img
-                src="/images/ginger.svg"
+                src="/images/banana.svg"
                 alt="Ginger"
                 className="
                   w-[220px] h-[220px] md:w-[260px] md:h-[260px]

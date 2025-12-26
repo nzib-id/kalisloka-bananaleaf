@@ -2,260 +2,187 @@
 "use client";
 
 import { useState } from "react";
+import { motion, LayoutGroup } from "framer-motion";
 
-const IMAGES = [
-  "/images/ginger.svg",
-  "/images/banana.svg",
-  "/images/ginger.svg",
+const ITEMS = [
+  { id: "banana-1", src: "/images/banana.svg" },
+  { id: "ginger-2", src: "/images/ginger.svg" },
+  { id: "banana-3", src: "/images/banana.svg" },
 ];
 
 export default function ProductOverviewSection() {
   const [index, setIndex] = useState(0);
 
-  const next = () => setIndex((prev) => (prev + 1) % IMAGES.length);
-  const prev = () => setIndex((prev) => (prev - 1 + IMAGES.length) % IMAGES.length);
+  const next = () => setIndex((prev) => (prev + 1) % ITEMS.length);
+  const prev = () => setIndex((prev) => (prev - 1 + ITEMS.length) % ITEMS.length);
 
-  const [slideDir, setSlideDir] = useState(null);
+  // Logic Helper
+  const leftItem = ITEMS[(index - 1 + ITEMS.length) % ITEMS.length];
+  const centerItem = ITEMS[index];
+  const rightItem = ITEMS[(index + 1) % ITEMS.length];
+
+  // Setting animasi smooth (Elegant Style)
+  const transitionSettings = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+
   return (
-    <section id="product-overview" className="relative w-full">
+    <section id="product-overview" className="relative w-full overflow-hidden">
 
-      {/* BACKGROUND ROUNDED */}
-      <div
-        className="
-          absolute inset-0
-          -mt-8 md:-mt-12
-          bg-[#E6FFCF]
-          rounded-t-[45px] md:rounded-t-[60px]
-        "
-      />
+      {/* Background (Tetap Sama) */}
+      <div className="absolute inset-0 -mt-8 md:-mt-12 bg-[#E6FFCF] rounded-t-[45px] md:rounded-t-[60px]" />
 
-      {/* CONTENT */}
       <div className="relative z-10 py-20 md:py-24 text-center">
-
-        {/* TITLE */}
-          <h2 className="text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px] font-heading font-semibold text-[#004035] mb-12 tracking-tight">
+        <h2 className="text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px] font-heading font-semibold text-[#004035] mb-12 tracking-tight">
           Product Overview
         </h2>
 
-        {/* SLIDER WRAPPER                */}
         <div className="w-full relative overflow-visible">
 
-          <div
-            className="
-              w-full flex items-center justify-center
-              gap-2 sm:gap-4 md:gap-8
-            "
-          >
+          {/* LayoutGroup adalah 'lem' ajaib yang menyatukan animasi antar posisi */}
+          <LayoutGroup>
+            <div className="w-full flex items-center justify-center sm:gap-4 md:gap-6">
 
-            {/* LEFT SIDE IMAGE               */}
-            <div
-              className="group relative -translate-x-[25%]"
-              style={{ width: "clamp(170px, 30vw, 300px)" }}
-            >
-              {/* OUTER FRAME */}
+              {/* ======================= */}
+              {/* POSISI KIRI             */}
+              {/* ======================= */}
               <div
-                className="
-                  border-[clamp(3px,0.8vw,6px)] border-[#003F38]
-                  rounded-[clamp(22px,4vw,40px)]
-                  p-[clamp(3px,0.7vw,7px)]
-                  overflow-hidden
-                  transition-all duration-300
-                  group-hover:border-[#005947]
-                "
+                className="group relative -translate-x-[25%] z-0"
+                style={{ width: "clamp(200px, 30vw, 420px)" }}
               >
-                {/* INNER FRAME + IMAGE */}
-                <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden">
-
-                  {/* OVERLAY */}
-                  <a href=""
-                    className="
-                      absolute inset-0 z-20 rounded-[inherit]
-                      bg-black/0 backdrop-blur-0
-                      opacity-0
-                      flex items-center justify-center
-                      transition-all duration-300
-                      group-hover:bg-black/25
-                      group-hover:backdrop-blur-sm
-                      group-hover:opacity-100
-                    "
-                  >
-                    <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">
-                      Click to view detail
-                    </span>
-                  </a>
-
-                  {/* IMAGE */}
-                  <img
-                    src={IMAGES[(index - 1 + IMAGES.length) % IMAGES.length]}
-                    alt="Left"
-                    className="
-                      w-full h-full object-cover
-                      scale-[1.03] opacity-80
-                      transition-all duration-300
-                      group-hover:scale-[1.07]
-                    "
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* LEFT ARROW                    */}
-            <button
-              onClick={prev}
-              className="
-                h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16
-                flex items-center justify-center
-                rounded-full bg-[#E6FFCF]
-                shadow-sm mr-2
-              "
-            >
-              <img src="/icons/arrow-left.svg" />
-            </button>
-
-
-            {/* CENTER IMAGE */}
-            <div
-              className="
-                group relative
-                w-[clamp(270px,40vw,380px)]
-                border-[clamp(3px,0.8vw,6px)] border-[#003F38]
-                rounded-[clamp(22px,4vw,40px)]
-                p-[clamp(3px,0.7vw,7px)]
-                transition-all duration-300
-                group-hover:scale-[1.04]
-                group-hover:border-[#005947]
-                group-hover:shadow-[0_0_22px_rgba(0,64,53,0.45)]
-              "
-            >
-
-              {/* INNER FRAME (TEMPAT GAMBAR + OVERLAY) */}
-              <div
-                className="
-                  relative
-                  rounded-[clamp(18px,3.5vw,32px)]
-                  overflow-hidden
-                  z-10
-                "
-              >
-
-                {/* OVERLAY — hanya di area gambar */}
-                <a href=""
+                <motion.div
+                  key={leftItem.id}        // Wajib Unik
+                  layoutId={leftItem.id}   // Wajib Sama dengan ID Item
+                  transition={transitionSettings}
                   className="
-                    absolute inset-0 z-20
-                    flex items-center justify-center
-                    bg-black/0 backdrop-blur-0
-                    opacity-0
-                    rounded-[inherit]
-                    transition-all duration-300
-                    group-hover:bg-black/25
-                    group-hover:backdrop-blur-sm
-                    group-hover:opacity-100
+                    border-[clamp(3px,0.8vw,6px)] border-[#003F38]
+                    rounded-[clamp(22px,4vw,40px)]
+                    p-[clamp(3px,0.7vw,7px)]
+                    overflow-hidden
+                    bg-[#E6FFCF]
+                    group-hover:border-[#005947]
                   "
                 >
-                  <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">
-                    Click to view detail
-                  </span>
-                </a>
+                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[6/5]">
+                    {/* Overlay */}
+                    <a href="" className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]">
+                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">View Detail</span>
+                    </a>
 
-                {/* IMAGE */}
-                <img
-                  src={IMAGES[index]}
-                  alt="Main"
+                    <motion.img
+                      layoutId={`img-${leftItem.id}`} // Animasi Gambar
+                      src={leftItem.src}
+                      alt="Left"
+                      className="w-full h-full object-cover scale-[1.03] opacity-80"
+                    />
+
+                     {/* DARK OVERLAY (inactive state) */}
+                     <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
+                  </div>
+                </motion.div>
+              </div>
+
+
+              {/* BUTTON PREV */}
+              <button onClick={prev} className="z-20 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 flex items-center justify-center rounded-full bg-[#E6FFCF] shadow-sm mr-2 cursor-pointer hover:scale-105 transition-transform">
+                <img src="/icons/arrow-left.svg" alt="prev" />
+              </button>
+
+
+              {/* ======================= */}
+              {/* POSISI TENGAH (ACTIVE)  */}
+              {/* ======================= */}
+              <div className="group relative z-10 w-[clamp(300px,40vw,480px)]">
+                <motion.div
+                  key={centerItem.id}       // ID ini tadinya ada di Kanan/Kiri
+                  layoutId={centerItem.id}  // Framer Motion mendeteksi perpindahan ini
+                  transition={transitionSettings}
                   className="
-                    w-full h-full object-cover
-                    scale-[1.03]
-                    transition-all duration-300
-                    group-hover:scale-[1.12]
+                    border-[clamp(3px,0.8vw,6px)] border-[#003F38]
+                    rounded-[clamp(22px,4vw,40px)]
+                    p-[clamp(3px,0.7vw,7px)]
+                    bg-[#E6FFCF]
+                    group-hover:border-[#005947]
+                    group-hover:shadow-[0_0_22px_rgba(0,64,53,0.45)]
                   "
-                />
+                >
+                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[6/5]">
+                    {/* Overlay */}
+                    <a href="" className="absolute inset-0 z-20 flex items-center justify-center bg-black/0 backdrop-blur-0 opacity-0 transition-all duration-300 group-hover:bg-black/25 group-hover:backdrop-blur-sm group-hover:opacity-100 rounded-[inherit]">
+                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">Click to view detail</span>
+                    </a>
+
+                    <motion.img
+                      layoutId={`img-${centerItem.id}`} // Animasi Gambar
+                      src={centerItem.src}
+                      alt="Main"
+                      className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.12] transition-transform duration-500"
+                    />
+                  </div>
+                </motion.div>
               </div>
-            </div>
 
 
-            {/* RIGHT ARROW                   */}
-            <button
-              onClick={next}
-              className="
-                h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16
-                flex items-center justify-center
-                rounded-full bg-[#E6FFCF]
-                shadow-sm ml-2
-              "
-            >
-              <img src="/icons/arrow-right.svg" />
-            </button>
+              {/* BUTTON NEXT */}
+              <button onClick={next} className="z-20 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 flex items-center justify-center rounded-full bg-[#E6FFCF] shadow-sm ml-2 cursor-pointer hover:scale-105 transition-transform">
+                <img src="/icons/arrow-right.svg" alt="next" />
+              </button>
 
-            {/* RIGHT SIDE IMAGE              */}
-            <div
-              className="group relative translate-x-[25%]"
-              style={{ width: "clamp(170px, 30vw, 300px)" }}
-            >
+
+              {/* ======================= */}
+              {/* POSISI KANAN            */}
+              {/* ======================= */}
               <div
-                className="
-                  border-[clamp(3px,0.8vw,6px)] border-[#003F38]
-                  rounded-[clamp(22px,4vw,40px)]
-                  p-[clamp(3px,0.7vw,7px)]
-                  overflow-hidden
-                  transition-all duration-300
-                  group-hover:border-[#005947]
-                "
+                className="group relative translate-x-[25%] z-0"
+                style={{ width: "clamp(200px, 30vw, 420px)" }}
               >
-                <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden">
+                <motion.div
+                  key={rightItem.id}
+                  layoutId={rightItem.id}
+                  transition={transitionSettings}
+                  className="
+                    border-[clamp(3px,0.8vw,6px)] border-[#003F38]
+                    rounded-[clamp(22px,4vw,40px)]
+                    p-[clamp(3px,0.7vw,7px)]
+                    overflow-hidden
+                    bg-[#E6FFCF]
+                    group-hover:border-[#005947]
+                  "
+                >
+                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[6/5]">
+                    {/* Overlay */}
+                    <a href="" className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]">
+                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">View Detail</span>
+                    </a>
 
-                  {/* OVERLAY */}
-                  <a href=""
-                    className="
-                      absolute inset-0 z-20 rounded-[inherit]
-                      bg-black/0 backdrop-blur-0 opacity-0
-                      flex items-center justify-center
-                      transition-all duration-300
-                      group-hover:bg-black/25
-                      group-hover:backdrop-blur-sm
-                      group-hover:opacity-100
-                    "
-                  >
-                    <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">
-                      Click to view detail
-                    </span>
-                  </a>
+                    <motion.img
+                      layoutId={`img-${rightItem.id}`}
+                      src={rightItem.src}
+                      alt="Right"
+                      className="w-full h-full object-cover scale-[1.03] opacity-80 "
+                    />
 
-                  <img
-                    src={IMAGES[(index + 1) % IMAGES.length]}
-                    alt="Right"
-                    className="
-                      w-full h-full object-cover
-                      scale-[1.03] opacity-80
-                      transition-all duration-300
-                      group-hover:scale-[1.07]
-                    "
-                  />
-                </div>
+                     {/* DARK OVERLAY (inactive state) */}
+                      <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
+                  </div>
+                </motion.div>
               </div>
-            </div>
 
-          </div>
+            </div>
+          </LayoutGroup>
         </div>
 
+        {/* Description Text */}
+        <div className="container mx-auto mt-12 px-4 text-left space-y-4">
+          <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#003F38] max-w-[630px] mx-auto">
+            Fresh banana leaves supplied in export-ready condition, selected for wide surface area and clean handling.
+            Intended for food wrapping, catering, and wholesale distribution.
+          </p>
 
-        <div className="container mx-auto text-left mt-12 md:mt-16">
-          {/* DESCRIPTION */} <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#003F38] max-w-[720px] mx-auto mb-6"> Our fresh ginger is supplied as cleaned and sorted raw material, ready to be processed, blended, or further refined in your production line. We work with selected agricultural sources and collection points, emphasizing stability and clarity of specification. </p>
-
-          {/* MINI SPECS */}
-          <div className="text-left text-[#003F38] max-w-[720px] mx-auto text-[15px] leading-relaxed">
-            <p>
-              <span className="font-semibold">Product type:</span> fresh agricultural raw material
-            </p>
-            <p>
-              <span className="font-semibold">Uses:</span> processing, blending, extraction, trading
-            </p>
-            <p>
-              <span className="font-semibold">Supply model:</span> B2B, volume-based planning
-            </p>
-          </div>
+          <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#003F38] max-w-[630px] mx-auto">
+            Leaves are sorted and packed to support commercial workflows, not retail presentation
+          </p>
         </div>
 
       </div>
-
     </section>
   );
 }

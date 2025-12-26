@@ -1,68 +1,34 @@
-"use client";
-
-import { clsx } from "clsx";
+import React from "react";
+import clsx from "clsx";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?:
-    | "white"
-    | "outline-light"
-    | "primary"
-    | "outline";
-  className?: string;
+  variant?: "primary" | "outline-light";
 }
 
-export default function Button({
-  variant = "primary",
-  className = "",
+const Button: React.FC<ButtonProps> = ({
   children,
+  variant = "primary",
+  className,
   ...props
-}: ButtonProps) {
-
-  const baseStyles = `
-    inline-flex items-center justify-center
-    font-medium
-    rounded-full
-    transition-all
-    duration-200
-    whitespace-nowrap
-  `;
-
-  const variantStyles: Record<string, string> = {
-    primary: `
-      bg-[#003F38]
-      text-white
-      hover:bg-[#002d2a]
-    `,
-
-    white: `
-      bg-white
-      shadow-md
-      hover:bg-gray-100
-    `,
-
-    "outline-light": `
-      border border-white
-      text-white
-      hover:bg-white/10
-    `,
-
-    outline: `
-      border border-[#003F38]
-      text-[#003F38]
-      hover:bg-[#003F38]/10
-    `,
-  };
-
+}) => {
   return (
     <button
       {...props}
       className={clsx(
-        baseStyles,
-        variantStyles[variant],
+        "px-6 py-3 rounded-full text-sm font-semibold transition-all",
+        {
+          "bg-white text-black hover:bg-gray-200":
+            variant === "primary",
+
+          "border-[1.5px] border-white text-white hover:bg-white/10":
+            variant === "outline-light",
+        },
         className
       )}
     >
       {children}
     </button>
   );
-}
+};
+
+export default Button;
