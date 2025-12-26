@@ -35,7 +35,7 @@ export default function ProductOverviewSection() {
           Product Overview
         </h2>
 
-        <div className="w-full relative overflow-visible">
+        <div className="w-full relative overflow-visible mb-8">
 
           {/* LayoutGroup adalah 'lem' ajaib yang menyatukan animasi antar posisi */}
           <LayoutGroup>
@@ -53,12 +53,11 @@ export default function ProductOverviewSection() {
                   layoutId={leftItem.id}   // Wajib Sama dengan ID Item
                   transition={transitionSettings}
                   className="
-                    border-[clamp(3px,0.8vw,6px)] border-[#003F38]
+                    border-[clamp(3px,0.8vw,5px)] border-[#003F38]
                     rounded-[clamp(22px,4vw,40px)]
-                    p-[clamp(3px,0.7vw,7px)]
+                    p-[clamp(1px,0.7vw,1px)]
                     overflow-hidden
                     bg-[#E6FFCF]
-                    group-hover:border-[#005947]
                   "
                 >
                   <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[6/5]">
@@ -96,12 +95,10 @@ export default function ProductOverviewSection() {
                   layoutId={centerItem.id}  // Framer Motion mendeteksi perpindahan ini
                   transition={transitionSettings}
                   className="
-                    border-[clamp(3px,0.8vw,6px)] border-[#003F38]
+                    border-[clamp(3px,0.8vw,5px)] border-[#003F38]
                     rounded-[clamp(22px,4vw,40px)]
-                    p-[clamp(3px,0.7vw,7px)]
+                    p-[clamp(1px,0.7vw,1px)]
                     bg-[#E6FFCF]
-                    group-hover:border-[#005947]
-                    group-hover:shadow-[0_0_22px_rgba(0,64,53,0.45)]
                   "
                 >
                   <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[6/5]">
@@ -139,12 +136,11 @@ export default function ProductOverviewSection() {
                   layoutId={rightItem.id}
                   transition={transitionSettings}
                   className="
-                    border-[clamp(3px,0.8vw,6px)] border-[#003F38]
+                    border-[clamp(3px,0.8vw,5px)] border-[#003F38]
                     rounded-[clamp(22px,4vw,40px)]
-                    p-[clamp(3px,0.7vw,7px)]
+                    p-[clamp(1px,0.7vw,1px)]
                     overflow-hidden
                     bg-[#E6FFCF]
-                    group-hover:border-[#005947]
                   "
                 >
                   <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[6/5]">

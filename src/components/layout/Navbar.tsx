@@ -169,29 +169,24 @@ const Navbar: React.FC = () => {
               ✕
             </button>
 
-            <a
-              href="#hero"
-              onClick={() => setOpen(false)}
-              className="text-2xl font-medium mb-6 hover:opacity-80 transition"
-            >
-              Home
-            </a>
-
-            <a
-              href="#specifications"
-              onClick={() => setOpen(false)}
-              className="text-2xl font-medium mb-6 hover:opacity-80 transition"
-            >
-              Specifications
-            </a>
-
-            <a
-              href="#contact"
-              onClick={() => setOpen(false)}
-              className="text-2xl font-medium mb-6 hover:opacity-80 transition"
-            >
-              Contact
-            </a>
+            {NAV_ITEMS.map((item) => (
+              <Link
+                key={item.label}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className={
+                  item.cta
+                    ? `${
+                        green
+                          ? "bg-[#004035] text-[#E6FFCF]"
+                          : "bg-[#E6FFCF] text-[#004035]"
+                      } mt-4 rounded-full px-6 py-3 text-xl font-semibold hover:opacity-90 transition`
+                    : "text-2xl font-medium mb-6 hover:opacity-80 transition"
+                }
+              >
+                {item.label}
+              </Link>
+            ))}
           </div>
         </div>
       )}
