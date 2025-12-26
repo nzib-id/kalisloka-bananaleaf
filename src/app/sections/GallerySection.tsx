@@ -1,9 +1,9 @@
 "use client";
+
 import { MasonryPhotoAlbum } from "react-photo-album";
 import "react-photo-album/masonry.css";
 
 import photos from "@/data/gallery";
-/* eslint-disable @next/next/no-img-element */
 
 export default function GallerySection() {
   return (
@@ -21,10 +21,11 @@ export default function GallerySection() {
 
       {/* MASONRY */}
       <div className="max-w-6xl mx-auto px-4">
-        <div
-        >
-          <MasonryPhotoAlbum photos={photos} />;
-        </div>
+        <MasonryPhotoAlbum
+          photos={photos}
+          columns={4}
+          spacing={10}
+        />
       </div>
     </section>
   );

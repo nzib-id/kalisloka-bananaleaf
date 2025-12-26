@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, LayoutGroup } from "framer-motion";
+import { motion, LayoutGroup, cubicBezier  } from "framer-motion";
 
 const ITEMS = [
   { id: "banana-1", src: "/images/banana.svg" },
@@ -22,7 +22,7 @@ export default function ProductOverviewSection() {
   const rightItem = ITEMS[(index + 1) % ITEMS.length];
 
   // Setting animasi smooth (Elegant Style)
-  const transitionSettings = { duration: 0.8, ease: [0.16, 1, 0.3, 1] };
+  const transitionSettings = { duration: 0.8, ease: cubicBezier(0.16, 1, 0.3, 1), };
 
   return (
     <section id="product-overview" className="relative w-full overflow-hidden">
