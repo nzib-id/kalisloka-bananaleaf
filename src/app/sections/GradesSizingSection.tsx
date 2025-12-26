@@ -35,11 +35,11 @@ export default function GradesSection() {
     <section id="grades" className="bg-[#E6FFCF] py-20 sm:py-24 lg:py-28">
       {/* HEADER */}
       <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16 lg:mb-20 px-4 sm:px-6">
-        <h2 className="font-heading font-semibold text-[#003F38]
-          text-[44px] sm:text-[56px] lg:text-[80px]">
+        <h2 className="font-heading font-semibold text-[#004035]
+          text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px]">
           Grades
         </h2>
-        <p className="mt-3 sm:mt-4 text-[13px] sm:text-[14px] text-[#1E1E1E]/70">
+        <p className="mt-3 sm:mt-4 text-[13px] sm:text-[14px] text-[#1E1E1E]">
           Defined grading to support consistent supply and commercial use.
         </p>
       </div>
@@ -127,7 +127,7 @@ export default function GradesSection() {
             Custom Specification
           </h3>
 
-          <p className="text-[12px] sm:text-[13px] text-[#003F38]/70 mb-6 sm:mb-8">
+          <p className="text-[12px] sm:text-[13px] text-[#1E1E1E] mb-6 sm:mb-8">
             For buyers with specific operational or market requirements.
           </p>
 

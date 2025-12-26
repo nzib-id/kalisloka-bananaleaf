@@ -28,47 +28,14 @@ export default function SpecificationsSection() {
           <div
             className="
               grid grid-cols-1 md:grid-cols-2
-              gap-10 md:gap-12 items-center
+              gap-5 items-center
             "
           >
-            {/* TEXT BLOCK */}
-            <div className="space-y-4 text-[#003F38] text-[15px] leading-relaxed">
-
-              <p>
-                <span className="font-semibold">Product Name:</span> Fresh banana leaf
-              </p>
-
-              <p>
-                <span className="font-semibold">Botanical Name:</span>{" "}
-                <span className="italic">Zingiber officinale</span>
-              </p>
-
-              <p>
-                <span className="font-semibold">Minimum width:</span> ≥30 cm
-              </p>
-
-              <p>
-                <span className="font-semibold">Length:</span> Natural length or cut size (on request)
-              </p>
-
-              <p>
-                <span className="font-semibold">Condition:</span> Fresh, cleaned
-              </p>
-
-              <p>
-                <span className="font-semibold">Color:</span> Natural green
-              </p>
-
-              <p>
-                <span className="font-semibold">Origin:</span> Sourced from agricultural areas in West Java (traceable by batch)
-              </p>
-            </div>
-
             {/* IMAGE */}
-            <div className="flex justify-center md:justify-end">
+            <div className="flex justify-center md:justify-end order-1 md:order-2">
               <img
-                src="/images/banana.svg"
-                alt="Ginger"
+                src="/images/banana.png"
+                alt="Banana Leaf"
                 className="
                   w-[220px] h-[220px] md:w-[260px] md:h-[260px]
                   object-cover
@@ -77,7 +44,31 @@ export default function SpecificationsSection() {
                 "
               />
             </div>
+
+            {/* TEXT BLOCK */}
+            <div className="space-y-2 text-[#1E1E1E] text-[15px] md:text-[18px] order-2 md:order-1">
+              <p>
+                <span className="font-semibold font-heading">Product Name:</span> Fresh banana leaf
+              </p>
+              <p>
+                <span className="font-semibold font-heading">HS Code:</span>{" "}
+                <span className="italic">0709.99.90</span>
+              </p>
+              <p>
+                <span className="font-semibold font-heading">Size:</span> 100cm x 30cm (adjustable by request)
+              </p>
+              <p>
+                <span className="font-semibold font-heading">Condition:</span> Fresh, cleaned
+              </p>
+              <p>
+                <span className="font-semibold font-heading">Color:</span> Natural green
+              </p>
+              <p>
+                <span className="font-semibold font-heading">Origin:</span> Sourced from agricultural areas in West Java (traceable by batch)
+              </p>
+            </div>
           </div>
+
         </div>
 
       </div>

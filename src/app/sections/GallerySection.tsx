@@ -11,8 +11,8 @@ export default function GallerySection() {
     <section id="gallery" className="bg-[#E6FFCF] py-24">
       {/* HEADER */}
       <div className="text-center mb-16 px-4">
-        <h2 className="font-heading font-semibold text-[#003F38]
-          text-[48px] sm:text-[64px] leading-tight">
+        <h2 className="font-heading font-semibold text-[#004035]
+          text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px] leading-tight">
           Gallery
         </h2>
         <p className="mt-3 text-[13px] text-[#003F38]/70">

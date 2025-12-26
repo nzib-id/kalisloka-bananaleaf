@@ -5,9 +5,9 @@ import { useState } from "react";
 import { motion, LayoutGroup, cubicBezier  } from "framer-motion";
 
 const ITEMS = [
-  { id: "banana-1", src: "/images/banana.svg" },
-  { id: "ginger-2", src: "/images/ginger.svg" },
-  { id: "banana-3", src: "/images/banana.svg" },
+  { id: "banana-1", src: "/images/banana.png" },
+  { id: "ginger-2", src: "/images/banana.png" },
+  { id: "banana-3", src: "/images/banana.png" },
 ];
 
 export default function ProductOverviewSection() {
@@ -172,13 +172,12 @@ export default function ProductOverviewSection() {
 
         {/* Description Text */}
         <div className="container mx-auto mt-12 md:mt-16 px-4 text-left space-y-4">
-          <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#003F38] max-w-[630px] mx-auto">
-            Fresh banana leaves supplied in export-ready condition, selected for wide surface area and clean handling.
-            Intended for food wrapping, catering, and wholesale distribution.
+          <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#1E1E1E] max-w-[630px] mx-auto">
+            Banana leaves are widely used in commercial food preparation for wrapping, cooking, and presentation.
           </p>
 
-          <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#003F38] max-w-[630px] mx-auto">
-            Leaves are sorted and packed to support commercial workflows, not retail presentation
+          <p className="text-[15px] md:text-[16px] leading-[1.7] text-[#1E1E1E] max-w-[630px] mx-auto">
+            <b>Kalisloka</b> supplies fresh banana leaves intended for professional operations where consistency, usability, and handling matter.
           </p>
         </div>
 

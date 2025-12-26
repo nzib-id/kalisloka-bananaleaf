@@ -8,6 +8,7 @@ import GradesSizingSection from "./sections/GradesSizingSection";
 import ApplicationsSection from "./sections/ApplicationsSection";
 import ContactSection from "./sections/ContactSection";
 import GallerySection from "./sections/GallerySection";
+import ProcessingSection from "./sections/Processing";
 
 
 
@@ -19,6 +20,7 @@ const HomePage: React.FC = () => {
       <ProductOverviewSection />
       <SpecificationsSection />
       <GradesSizingSection />
+      <ProcessingSection />
       <GallerySection />
       {/* <ApplicationsSection /> */}
 
