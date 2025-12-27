@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
                       className={`${
                         green
                           ? "bg-[#004035] text-[#E6FFCF]"
-                          : "bg-[#E6FFCF] text-[#004035]"
+                          : "bg-[#fff] text-[#092823]"
                       } rounded-full text-sm font-semibold px-3 lg:px-5 py-2 hover:opacity-90 transition-all`}
                     >
                       {item.label}

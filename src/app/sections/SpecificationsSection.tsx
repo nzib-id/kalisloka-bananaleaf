@@ -17,11 +17,11 @@ export default function SpecificationsSection() {
         {/* CARD */}
         <div
           className="
-            max-w-[850px]
+            max-w-4xl
             mx-auto
             border-[4px] border-[#003F38]
             rounded-3xl
-            p-8 sm:p-10 md:p-12
+            p-8 sm:p-10 md:py-16
             bg-transparent
           "
         >
@@ -40,7 +40,9 @@ export default function SpecificationsSection() {
                   w-[220px] h-[220px] md:w-[260px] md:h-[260px]
                   object-cover
                   rounded-2xl
+                  md:rounded-[35px]
                   shadow-sm
+                   border-[4px] border-[#003F38]
                 "
               />
             </div>

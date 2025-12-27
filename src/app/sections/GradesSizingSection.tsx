@@ -74,14 +74,14 @@ export default function GradesSection() {
             </h3>
 
             {/* CONTENT (subtitle + points with dividers) */}
-            <div className="flex flex-col text-center text-[#003F38]">
+            <div className="flex flex-col text-center text-[#1E1E1E]">
               {[grade.subtitle, ...grade.points].map((text, idx) => (
                 <div key={idx} className="flex flex-col items-center">
                   <p
                     className={`
                       leading-relaxed font-semibold
                       ${idx === 0
-                        ? "text-[11px] sm:text-[12px] text-[#003F38] py-4"
+                        ? "text-[11px] sm:text-[12px] text-[#1E1E1E] py-4"
                         : "text-[12px] sm:text-[13px] py-3"}
                     `}
                   >
@@ -99,22 +99,31 @@ export default function GradesSection() {
             <a
               href="#"
               className="
+                mx-auto
+                inline-flex items-center gap-2
                 font-heading
                 mt-auto
                 pt-8 sm:pt-10
-                text-[12px] sm:text-[13px] md:text-[18px]
+                text-[15px] md:text-[18px]
                 font-medium
                 text-[#003F38]
               "
             >
-              Request this supply
+              <span>Request this supply</span>
+
+              <img
+                src="/icons/arrow.svg"
+                alt=""
+                className="w-[0.6em] h-[0.6em]"
+              />
             </a>
+
           </div>
         ))}
       </div>
 
       {/* CUSTOM SPEC */}
-      <div className="max-w-5xl mx-auto mt-16 sm:mt-20 px-4 sm:px-6">
+      <div className="max-w-5xl mx-auto mt-16 sm:mt-20 px-8 ">
         <div className="
           border-[4px] border-[#003F38]
           rounded-3xl
@@ -127,22 +136,22 @@ export default function GradesSection() {
             Custom Specification
           </h3>
 
-          <p className="text-[12px] sm:text-[13px] text-[#1E1E1E] mb-6 sm:mb-8">
+          <p className="text-[12px] sm:text-[13px] text-[#1E1E1E] mb-8">
             For buyers with specific operational or market requirements.
           </p>
 
-          <div className="flex justify-center">
+          <div className="flex justify-center mb-6">
             <div
               className="
                 grid grid-cols-1 sm:grid-cols-2
-                gap-y-3 sm:gap-y-4
+                gap-y-2
                 gap-x-10
-                text-[12px] sm:text-[13px]
-                text-[#003F38]
+                text-[14px] sm:text-[15px] md:text-[16px]
+                text-[#1E1E1E]
                 mb-8 sm:mb-10
-                max-w-[520px]
+                max-w-[570px]
                 w-full
-                text-left
+                text-center md:text-left
                 font-semibold
               "
             >
@@ -158,13 +167,21 @@ export default function GradesSection() {
             <a
               href="#"
               className="
-              font-heading
-                text-[16px] md:text-[24px]
+                mx-auto
+                inline-flex items-center gap-2
+                font-heading
+                text-[20px] md:text-[24px]
                 font-medium
                 text-[#003F38]
               "
             >
-              Request Specification
+              <span>Request this supply</span>
+
+              <img
+                src="/icons/arrow.svg"
+                alt=""
+                className="w-[0.6em] h-[0.6em]"
+              />
             </a>
           </div>
 

@@ -3,7 +3,7 @@
 
 export default function ProcessingSection() {
   return (
-    <section id="applications" className="w-full bg-[#E7F9D5] py-20 md:py-28">
+    <section id="applications" className="w-full  py-20 md:py-28">
       <div className="container mx-auto px-6 max-w-4xl text-center">
 
         {/* TITLE */}

@@ -62,10 +62,10 @@ export default function HeroSection() {
               text-white
               leading-relaxed
               mb-10
-              max-w-[520px]
+              max-w-[550px]
             "
           >
-            <b>Kalisloka</b> supplying fresh banana leaves with a focus on size consistency, clean handling, and dependable export supply.
+            Supplied by Kalisloka for professional food-wrapping and export use.
           </p>
 
           {/* CTA BUTTONS */}

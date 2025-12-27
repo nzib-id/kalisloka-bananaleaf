@@ -25,11 +25,11 @@ const ContactSection: React.FC = () => {
           mb-5
         "
       >
-        Start a conversation
+        Start A Conversation
       </h2>
 
       <p className="mt-3 sm:mt-4 text-[13px] sm:text-[14px] text-[#E6FFCF] mb-10">
-          Defined grading to support consistent supply and commercial use.
+          Tell us what you need. We’ll respond with details.
         </p>
 
       {/* CTA BUTTONS */}
@@ -59,7 +59,7 @@ const ContactSection: React.FC = () => {
           href="https://wa.me/6285121383435"
           className="
             flex items-center gap-3
-            border border-[#E8FAD9]
+            border-[4px] border-[#E8FAD9]
             text-[#E8FAD9]
             rounded-full
             px-8 py-3

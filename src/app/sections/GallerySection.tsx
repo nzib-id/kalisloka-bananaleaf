@@ -15,7 +15,7 @@ export default function GallerySection() {
           text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px] leading-tight">
           Gallery
         </h2>
-        <p className="mt-3 text-[13px] text-[#003F38]/70">
+        <p className="mt-3 text-[16px] md:text-[18px] text-[#1E1E1E]">
           See how we work
         </p>
       </div>
