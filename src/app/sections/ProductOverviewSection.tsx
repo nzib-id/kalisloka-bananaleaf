@@ -160,11 +160,11 @@ export default function ProductOverviewSection() {
 
         {/* Description Text */}
         <div className="container mx-auto mt-12 md:mt-16 px-7 md:px-10  text-left space-y-4 tracking-tight">
-          <p className="text-[15px] md:text-[16px] leading-[1.75] text-[#1E1E1E] max-w-[630px] mx-auto">
+          <p className="text-[15px] md:text-[17px] leading-[1.75] text-[#1E1E1E] max-w-[630px] mx-auto">
             Banana leaves are widely used in commercial food preparation for wrapping, cooking, and presentation.
           </p>
 
-          <p className="text-[15px] md:text-[16px] leading-[1.75] text-[#1E1E1E] max-w-[630px] mx-auto">
+          <p className="text-[15px] md:text-[17px] leading-[1.75] text-[#1E1E1E] max-w-[630px] mx-auto">
             <b>Kalisloka</b> supplies fresh banana leaves intended for professional operations where consistency, usability, and handling matter.
           </p>
         </div>
