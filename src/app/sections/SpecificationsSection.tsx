@@ -21,7 +21,7 @@ export default function SpecificationsSection() {
             mx-auto
             border-[4px] border-[#003F38]
             rounded-3xl
-            p-8 sm:p-10 md:py-16
+            p-8 sm:p-10 py-12 md:py-16
             bg-transparent
           "
         >
@@ -32,7 +32,7 @@ export default function SpecificationsSection() {
             "
           >
             {/* IMAGE */}
-            <div className="flex justify-center md:justify-end order-1 md:order-2">
+            <div className="flex justify-center md:justify-end order-1 mb-6 md:mb-0 md:order-2">
               <img
                 src="/images/banana.png"
                 alt="Banana Leaf"
@@ -48,7 +48,7 @@ export default function SpecificationsSection() {
             </div>
 
             {/* TEXT BLOCK */}
-            <div className="space-y-2 text-[#1E1E1E] text-[15px] md:text-[18px] order-2 md:order-1">
+            <div className="space-y-2 text-[#1E1E1E] text-[16px] md:text-[18px] order-2 md:order-1 leading-relaxed">
               <p>
                 <span className="font-semibold font-heading">Product Name:</span> Fresh banana leaf
               </p>

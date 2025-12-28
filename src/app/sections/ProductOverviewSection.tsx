@@ -28,7 +28,14 @@ export default function ProductOverviewSection() {
     <section id="overview" className="relative w-full">
 
       {/* Background (Tetap Sama) */}
-      <div className="absolute inset-0 -mt-8 md:-mt-12 bg-[#E6FFCF] rounded-t-[45px] md:rounded-t-[60px]" />
+      <div className="absolute left-0 top-0
+          w-full
+          -mt-10 md:-mt-16   /* overlap halus */
+
+          bg-[#E6FFCF]
+          rounded-t-[45px] md:rounded-t-[60px]
+
+          pt-16 md:pt-40 pb-20 md:pb-28" />
 
       <div className="relative z-10 py-20 md:py-24 text-center">
         <h2 className="text-[40px] md:text-[56px] lg:text-[72px] xl:text-[96px] font-heading font-semibold text-[#004035] mb-12 tracking-tight">
@@ -61,7 +68,7 @@ export default function ProductOverviewSection() {
                     bg-[#E6FFCF]
                   "
                 >
-                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[4/3]">
+                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[1/1] md:aspect-[4/3]">
                     <a
                       href=""
                       className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]"
@@ -88,7 +95,7 @@ export default function ProductOverviewSection() {
                 onClick={prev}
                 className="
                   z-20
-                  h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16
+                  h-14 w-14 lg:h-16 lg:w-16
                   flex items-center justify-center
                   rounded-full shadow-sm mr-2
                   cursor-pointer
@@ -118,7 +125,7 @@ export default function ProductOverviewSection() {
                     scale-[1.05] sm:scale-100
                   "
                 >
-                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[4/3]">
+                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[1/1] md:aspect-[4/3]">
                     <a
                       href=""
                       className="
@@ -157,7 +164,7 @@ export default function ProductOverviewSection() {
                 onClick={next}
                 className="
                   z-20
-                  h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16
+                  h-14 w-14 lg:h-16 lg:w-16
                   flex items-center justify-center
                   rounded-full shadow-sm ml-2
                   cursor-pointer
@@ -187,7 +194,7 @@ export default function ProductOverviewSection() {
                     bg-[#E6FFCF]
                   "
                 >
-                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[4/3]">
+                  <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[1/1] md:aspect-[4/3]">
                     <a
                       href=""
                       className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]"

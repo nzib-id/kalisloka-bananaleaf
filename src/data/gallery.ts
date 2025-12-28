@@ -7,13 +7,14 @@ const files = [
   "banana-4.png",
   "banana-5.jpg",
   "banana-6.jpg",
+  
 ];
 
 const RATIOS: [number, number][] = [
-  [4, 3],
-  [3, 4],
-  [1, 1],
-  [5, 4],
+  [1, 1], // square
+  [4, 3], // landscape
+  [3, 4], // portrait
+  [5, 4], // soft landscape
 ];
 
 const photos: Photo[] = files.map((file, index) => {
@@ -24,8 +25,6 @@ const photos: Photo[] = files.map((file, index) => {
     width: w,
     height: h,
     alt: file.replace(/\.(png|jpe?g|webp)$/i, ""),
-    loading: "lazy",
-    decoding: "async",
   };
 });
 
