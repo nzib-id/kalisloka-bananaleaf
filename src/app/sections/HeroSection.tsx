@@ -40,7 +40,7 @@ export default function HeroSection() {
       {/* CONTENT */}
       <div className="relative z-10 container mx-auto ">
         <div className="max-w-[650px]
-          text-left h-screen flex flex-col justify-center pb-[180px] lg:pb-[110px]">
+          text-left h-screen flex flex-col justify-center pb-[100px] lg:pb-[150px]">
 
           {/* HEADLINE */}
           <h1

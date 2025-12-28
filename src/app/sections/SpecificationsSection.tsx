@@ -5,7 +5,7 @@ export default function SpecificationsSection() {
   return (
     <section
       id="specifications"
-      className="w-full py-20 bg-[#E6FFCF] container mx-auto "
+      className="w-full py-20 bg-[#E6FFCF] container mx-auto px-6 md:px-10 "
     >
       <div className="">
 

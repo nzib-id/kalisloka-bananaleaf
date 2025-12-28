@@ -94,8 +94,8 @@ const Navbar: React.FC = () => {
               {/* DESKTOP MENU */}
               <div
                 className={`
-                  hidden md:flex items-center space-x-20
-                  text-sm font-semibold transition-colors duration-300
+                  hidden lg:flex items-center  gap-10
+                  text-sm font-medium transition-colors duration-300
                   ${green ? "text-[#004035]" : "text-white"}
                 `}
               >
@@ -179,7 +179,7 @@ const Navbar: React.FC = () => {
                     ? `${
                         green
                           ? "bg-[#004035] text-[#E6FFCF]"
-                          : "bg-[#E6FFCF] text-[#004035]"
+                          : "bg-[#fff] text-[#092823]"
                       } mt-4 rounded-full px-6 py-3 text-xl font-semibold hover:opacity-90 transition`
                     : "text-2xl font-medium mb-6 hover:opacity-80 transition"
                 }

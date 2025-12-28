@@ -41,14 +41,17 @@ export default function ProductOverviewSection() {
           <LayoutGroup>
             <div className="w-full flex items-center justify-center sm:gap-4 md:gap-6">
 
-              {/* POSISI KIRI             */}
+             {/* LEFT ITEM */}
               <div
-                className="group relative -translate-x-[25%] z-0"
-                style={{ width: "clamp(220px, 30vw, 420px)" }}
+                className="
+                  group relative z-0
+                  -translate-x-[25%] sm:-translate-x-[35%] md:-translate-x-[25%]
+                  w-[70vw] sm:w-[clamp(250px,30vw,420px)]
+                "
               >
                 <motion.div
-                  key={leftItem.id}        // Wajib Unik
-                  layoutId={leftItem.id}   // Wajib Sama dengan ID Item
+                  key={leftItem.id}
+                  layoutId={leftItem.id}
                   transition={transitionSettings}
                   className="
                     border-[clamp(3px,0.8vw,5px)] border-[#003F38]
@@ -59,69 +62,118 @@ export default function ProductOverviewSection() {
                   "
                 >
                   <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[4/3]">
-                    {/* Overlay */}
-                    <a href="" className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]">
-                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">View Detail</span>
+                    <a
+                      href=""
+                      className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]"
+                    >
+                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">
+                        View Detail
+                      </span>
                     </a>
 
                     <motion.img
-                      layoutId={`img-${leftItem.id}`} // Animasi Gambar
+                      layoutId={`img-${leftItem.id}`}
                       src={leftItem.src}
                       alt="Left"
                       className="w-full h-full object-cover scale-[1.03] opacity-80"
                     />
 
-                     {/* DARK OVERLAY (inactive state) */}
-                     <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
+                    <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
                   </div>
                 </motion.div>
               </div>
 
-
               {/* BUTTON PREV */}
-              <button onClick={prev} className="z-20 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 flex items-center justify-center rounded-full bg-[#E6FFCF] shadow-sm mr-2 cursor-pointer hover:scale-105 transition-transform">
+              <button
+                onClick={prev}
+                className="
+                  z-20
+                  h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16
+                  flex items-center justify-center
+                  rounded-full shadow-sm mr-2
+                  cursor-pointer
+                  hover:scale-105 transition-transform
+                "
+              >
                 <img src="/icons/arrow-left.svg" alt="prev" />
               </button>
 
-              {/* POSISI TENGAH (ACTIVE)  */}
-              <div className="group relative z-10 w-[clamp(350px,40vw,480px)] ">
+              {/* CENTER ITEM (ACTIVE) */}
+              <div
+                className="
+                  group relative z-10
+                  w-[90vw]
+                  sm:w-[clamp(380px,40vw,480px)]
+                "
+              >
                 <motion.div
-                  key={centerItem.id}       // ID ini tadinya ada di Kanan/Kiri
-                  layoutId={centerItem.id}  // Framer Motion mendeteksi perpindahan ini
+                  key={centerItem.id}
+                  layoutId={centerItem.id}
                   transition={transitionSettings}
                   className="
                     border-[clamp(3px,0.8vw,5px)] border-[#003F38]
                     rounded-[clamp(22px,4vw,40px)]
                     p-[clamp(1px,0.7vw,1px)]
                     bg-[#E6FFCF]
+                    scale-[1.05] sm:scale-100
                   "
                 >
                   <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[4/3]">
-                    {/* Overlay */}
-                    <a href="" className="absolute inset-0 z-20 flex items-center justify-center bg-black/0 backdrop-blur-0 opacity-0 transition-all duration-300 group-hover:bg-black/25 group-hover:backdrop-blur-sm group-hover:opacity-100 rounded-[inherit]">
-                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">Click to view detail</span>
+                    <a
+                      href=""
+                      className="
+                        absolute inset-0 z-20
+                        flex items-center justify-center
+                        bg-black/0 backdrop-blur-0 opacity-0
+                        transition-all duration-300
+                        group-hover:bg-black/25
+                        group-hover:backdrop-blur-sm
+                        group-hover:opacity-100
+                        rounded-[inherit]
+                      "
+                    >
+                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">
+                        Click to view detail
+                      </span>
                     </a>
 
                     <motion.img
-                      layoutId={`img-${centerItem.id}`} // Animasi Gambar
+                      layoutId={`img-${centerItem.id}`}
                       src={centerItem.src}
                       alt="Main"
-                      className="w-full h-full object-cover scale-[1.03] group-hover:scale-[1.12] transition-transform duration-500"
+                      className="
+                        w-full h-full object-cover
+                        scale-[1.03]
+                        group-hover:scale-[1.12]
+                        transition-transform duration-500
+                      "
                     />
                   </div>
                 </motion.div>
               </div>
 
-
               {/* BUTTON NEXT */}
-              <button onClick={next} className="z-20 h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16 flex items-center justify-center rounded-full bg-[#E6FFCF] shadow-sm ml-2 cursor-pointer hover:scale-105 transition-transform">
+              <button
+                onClick={next}
+                className="
+                  z-20
+                  h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 lg:h-16 lg:w-16
+                  flex items-center justify-center
+                  rounded-full shadow-sm ml-2
+                  cursor-pointer
+                  hover:scale-105 transition-transform
+                "
+              >
                 <img src="/icons/arrow-right.svg" alt="next" />
               </button>
 
-              {/* POSISI KANAN            */}
+              {/* RIGHT ITEM */}
               <div
-                className="group relative translate-x-[25%] z-0"
-                style={{ width: "clamp(220px, 30vw, 420px)" }}
+                className="
+                  group relative z-0
+                  translate-x-[25%] sm:translate-x-[35%] md:translate-x-[25%]
+                  w-[70vw] sm:w-[clamp(250px,30vw,420px)]
+                "
               >
                 <motion.div
                   key={rightItem.id}
@@ -136,23 +188,27 @@ export default function ProductOverviewSection() {
                   "
                 >
                   <div className="relative rounded-[clamp(18px,3.5vw,32px)] overflow-hidden aspect-[4/3]">
-                    {/* Overlay */}
-                    <a href="" className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]">
-                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">View Detail</span>
+                    <a
+                      href=""
+                      className="absolute inset-0 z-20 bg-black/0 hover:bg-black/25 transition-all duration-300 flex items-center justify-center opacity-0 hover:opacity-100 rounded-[inherit]"
+                    >
+                      <span className="text-[#E6FFCF] text-[13px] sm:text-[15px]">
+                        View Detail
+                      </span>
                     </a>
 
                     <motion.img
                       layoutId={`img-${rightItem.id}`}
                       src={rightItem.src}
                       alt="Right"
-                      className="w-full h-full object-cover scale-[1.03] opacity-80 "
+                      className="w-full h-full object-cover scale-[1.03] opacity-80"
                     />
 
-                     {/* DARK OVERLAY (inactive state) */}
-                      <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
+                    <div className="absolute inset-0 bg-black/20 z-10 pointer-events-none" />
                   </div>
                 </motion.div>
               </div>
+
 
             </div>
           </LayoutGroup>

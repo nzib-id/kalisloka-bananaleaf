@@ -32,7 +32,7 @@ const grades = [
 
 export default function GradesSection() {
   return (
-    <section id="grades" className="bg-[#E6FFCF] py-20 sm:py-24 lg:py-28">
+    <section id="grades" className="bg-[#E6FFCF] py-20 sm:py-24 lg:py-28 container mx-auto ">
       {/* HEADER */}
       <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16 lg:mb-20 px-4 sm:px-6">
         <h2 className="font-heading font-semibold text-[#004035]
@@ -47,24 +47,26 @@ export default function GradesSection() {
       {/* GRADES GRID */}
       <div
         className="
-          max-w-5xl mx-auto px-4 sm:px-6
+          max-w-5xl mx-auto px-6 md:px-10
           grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
           gap-8 lg:gap-10
           place-items-center
+          items-stretch
+          md:auto-rows-fr
         "
       >
         {grades.map((grade, i) => (
           <div
             key={i}
             className="
-              w-full max-w-[320px] sm:max-w-[300px]
-              min-h-[440px] sm:min-h-[460px] lg:min-h-[480px]
+              w-full
               border-[4px] border-[#003F38]
               rounded-3xl
               px-6
               py-8 sm:py-10
               flex flex-col
               text-center
+              md:h-full
             "
           >
             {/* TITLE */}
@@ -103,8 +105,8 @@ export default function GradesSection() {
                 inline-flex items-center gap-2
                 font-heading
                 mt-auto
-                pt-8 sm:pt-10
-                text-[15px] md:text-[18px]
+                pt-8 md:pt-10
+                text-[18px] md:text-[20px]
                 font-medium
                 text-[#003F38]
               "
@@ -123,7 +125,7 @@ export default function GradesSection() {
       </div>
 
       {/* CUSTOM SPEC */}
-      <div className="max-w-5xl mx-auto mt-16 sm:mt-20 px-8 ">
+      <div className="max-w-5xl mx-auto mt-16 sm:mt-20 px-6 md:px-10">
         <div className="
           border-[4px] border-[#003F38]
           rounded-3xl
